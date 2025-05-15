@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Textarea from "./components/Textarea";
 import Alert from "./components/Alert";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -34,7 +34,7 @@ function App() {
   };
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Navbar mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
         <Routes>
@@ -45,7 +45,7 @@ function App() {
           />
           <Route exact path='/about' element={<About mode={mode} />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }
